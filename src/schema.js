@@ -15,6 +15,6 @@ module.exports = gql`
   }
 
   type Mutation {
-    newNote(content: String!): Note
+    newNote(content: String!): Note!
   }
 `;

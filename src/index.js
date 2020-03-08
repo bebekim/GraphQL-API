@@ -23,7 +23,10 @@ db.connect(DB_HOST);
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // context allows one to pass specific information along from our server code to an individual resolver with each request
+  // This will be useful for incorporating user authentication into application
   context: () => {
+    // add the db model to the context
     return { models };
   }
 });
